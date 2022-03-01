@@ -3,12 +3,6 @@ a {
     font-size: 1.25rem;
 }
 
-hr {
-    border-top: 2px solid gray;
-    width: 100px;
-    margin: 0 auto;
-}
-
 img {
     display: block;
     width: 100px;

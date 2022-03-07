@@ -45,9 +45,26 @@ app.get("/drinks", function(req, res) {
     res.render("drinks-menu");
 })
 
+app.get("/login", function(req, res) {
+    res.render("login");
+})
+
+app.get("/kitchen", function(req, res) {
+    res.render("kitchen");
+})
+
 app.post("/", function(req, res) {
     currentTable = req.body.table;
     res.redirect("/");
+})
+
+app.post("/checkedout", function(req, res) {
+    currentTable = 0;
+    res.redirect("/");
+})
+
+app.post("/login", function(req, res) {
+    res.redirect("/kitchen");
 })
 
 app.listen("3000", () => {

@@ -1,6 +1,6 @@
 <%- include("partials/header") -%>
     <div id="heading">
-        <button class="loginbtn">
+        <button class="loginbtn" onClick="location.href='/login'">
             <p>Login</p>
         </button>
         <div class="box">
@@ -84,9 +84,11 @@
                     </button>
                 </form>
             </div>
-            <div class="box" style="margin: 30px auto;height: 40px;width: 200px;">
-                <p>Checked out</p>
-            </div>
+            <form action="/checkedout" method="post">
+                <button class="box" style="margin: 30px auto;height: 40px;width: 200px; background-color: orange;" type="submit">
+                    <p>Checked out</p>
+                </button>
+            </form>
         </div>
         <div class="col-4" style="border-left: 2px solid gray; text-align: center;padding-top: 20px;">
             <h4>Order Status</h4>

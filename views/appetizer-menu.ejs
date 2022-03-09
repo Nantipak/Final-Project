@@ -1,8 +1,8 @@
 <%- include("partials/header") -%>
     <div id="heading">
-        <button class="loginbtn">
-        <p>Confirm</p>
-    </button>
+        <button class="box" style="height: 60px;width: 60px;border-radius: 75px; margin-top:25px; padding: 0;float: left;" onClick="location.href='/'">
+            <img src="/images/login/home.jpg" style="height: 25px;width: 25px;border-radius: 0;box-shadow: none;">
+        </button>
         <div class="box">
             <h2>Appetizer</h2>
         </div>
@@ -11,113 +11,143 @@
         <div>
             <input class="serchbar">
         </div>
-        <div class="row">
-            <div class="col-lg-1"></div>
-            <div class="col-sm-6 col-lg-2">
-                <img class="imgmenu" src="/images/appitizer/1-Smoke-Salmon.jpeg">
-                <div class="box" style="height: 40px;width: 200px; padding: 5px; margin-bottom: 10px;">
-                    Smoke Salmon
-                    <input type="text" style="width: 50px;height: 25px;">
+        <form action="/addFood" method="post">
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-sm-6 col-lg-2">
+                    <img class="imgmenu" src="/images/appitizer/1-Smoke-Salmon.jpeg">
+                    <div class="box" style="height: 40px;width: 200px; padding: 5px; margin-bottom: 10px;">
+                        Smoke Salmon
+                        <input type="hidden" name="id" style="width:50px;" value="101">
+                        <button type="summit" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#exampleModal">+</button>
+                    </div>
+                    <div class="box" style="height: 30px;width: 75px; padding: 0; margin-bottom: 10px;">
+                        <p style="font-size:small;">120 Bath</p>
+                    </div>
                 </div>
-                <div class="box" style="height: 30px;width: 75px; padding: 0; margin-bottom: 10px;">
-                    <p style="font-size:small;">120 Bath</p>
+                <div class="col-sm-6 col-lg-2">
+                    <img class="imgmenu" src="/images/appitizer/2-Cheese-Stick.jpeg">
+                    <div class="box" style="height: 40px;width: 200px; padding: 5px; margin-bottom: 10px;">
+                        Cheese Stick
+                        <input type="hidden" name="id" style="width:50px;" value="102">
+                        <button type="summit" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#exampleModal">+</button>
+                    </div>
+                    <div class="box" style="height: 30px;width: 75px; padding: 0; margin-bottom: 10px;">
+                        <p style="font-size:small;">80 Bath</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-2">
+                    <img class="imgmenu" src="/images/appitizer/3-Macaroni-Cheese.jpeg">
+                    <div class="box" style="height: 40px;width: 200px; padding: 5px; margin-bottom: 10px;">
+                        Macaroni Cheese
+                        <input type="hidden" name="id" style="width:50px;" value="103">
+                        <button type="summit" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#exampleModal">+</button>
+                    </div>
+                    <div class="box" style="height: 30px;width: 75px; padding: 0; margin-bottom: 10px;">
+                        <p style="font-size:small;">69 Bath</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-2">
+                    <img class="imgmenu" src="/images/appitizer/4-Cold-Cut.jpeg">
+                    <div class="box" style="height: 40px;width: 200px; padding: 5px; margin-bottom: 10px;">
+                        Cold Cut Plate
+                        <input type="hidden" name="id" style="width:50px;" value="104">
+                        <button type="summit" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#exampleModal">+</button>
+                    </div>
+                    <div class="box" style="height: 30px;width: 75px; padding: 0; margin-bottom: 10px;">
+                        <p style="font-size:small;">230 Bath</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-2">
+                    <img class="imgmenu" src="/images/appitizer/5-Mussel-with-Mornay-Sauce.jpeg">
+                    <div class="box" style="height: 40px;width: 200px; padding: 5px; margin-bottom: 10px;">
+                        Mussel & Mornay
+                        <input type="hidden" name="id" style="width:50px;" value="105">
+                        <button type="summit" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#exampleModal">+</button>
+                    </div>
+                    <div class="box" style="height: 30px;width: 75px; padding: 0; margin-bottom: 10px;">
+                        <p style="font-size:small;">125 Bath</p>
+                    </div>
+                </div>
+                <div class="col-lg-1"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-sm-6 col-lg-2">
+                    <img class="imgmenu" src="/images/appitizer/6-Tortilla-Pinwheels.jpeg">
+                    <div class="box" style="height: 40px;width: 200px; padding: 5px; margin-bottom: 10px;">
+                        Tortilla Pinwheels
+                        <input type="hidden" name="id" style="width:50px;" value="106">
+                        <button type="summit" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#exampleModal">+</button>
+                    </div>
+                    <div class="box" style="height: 30px;width: 75px; padding: 0; margin-bottom: 10px;">
+                        <p style="font-size:small;">100 Bath</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-2">
+                    <img class="imgmenu" src="/images/appitizer/7-Creamy-Artichoke.jpeg">
+                    <div class="box" style="height: 40px;width: 200px; padding: 5px; margin-bottom: 10px;">
+                        Creamy Artichoke
+                        <input type="hidden" name="id" style="width:50px;" value="107">
+                        <button type="summit" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#exampleModal">+</button>
+                    </div>
+                    <div class="box" style="height: 30px;width: 75px; padding: 0; margin-bottom: 10px;">
+                        <p style="font-size:small;">90 Bath</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-2">
+                    <img class="imgmenu" src="/images/appitizer/8-Party-Shrimp.jpeg">
+                    <div class="box" style="height: 40px;width: 200px; padding: 5px; margin-bottom: 10px;">
+                        Party Shrimp
+                        <input type="hidden" name="id" style="width:50px;" value="108">
+                        <button type="summit" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#exampleModal">+</button>
+                    </div>
+                    <div class="box" style="height: 30px;width: 75px; padding: 0; margin-bottom: 10px;">
+                        <p style="font-size:small;">110 Bath</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-2">
+                    <img class="imgmenu" src="/images/appitizer/9-Swedish-Meatballs.jpeg">
+                    <div class="box" style="height: 40px;width: 200px; padding: 5px; margin-bottom: 10px;">
+                        Swedish Meatballs
+                        <input type="hidden" name="id" style="width:50px;" value="109">
+                        <button type="summit" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#exampleModal">+</button>
+                    </div>
+                    <div class="box" style="height: 30px;width: 75px; padding: 0; margin-bottom: 10px;">
+                        <p style="font-size:small;">85 Bath</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-2">
+                    <img class="imgmenu" src="/images/appitizer/10-Cheese-Fries.jpeg">
+                    <div class="box" style="height: 40px;width: 200px; padding: 5px; margin-bottom: 10px;">
+                        Cheese Fries
+                        <input type="hidden" name="id" style="width:50px;" value="110">
+                        <button type="summit" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#exampleModal">+</button>
+                    </div>
+                    <div class="box" style="height: 30px;width: 75px; padding: 0; margin-bottom: 10px;">
+                        <p style="font-size:small;">65 Bath</p>
+                    </div>
+                </div>
+                <div class="col-lg-1"></div>
+            </div>
+        </form>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Order</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                    </div>
+                    <div class="modal-body">
+                        add the menu sucessfully
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-lg-2">
-                <img class="imgmenu" src="/images/appitizer/2-Cheese-Stick.jpeg">
-                <div class="box" style="height: 40px;width: 200px; padding: 5px; margin-bottom: 10px;">
-                    Cheese Stick
-                    <input type="text" style="width: 50px;height: 25px;">
-                </div>
-                <div class="box" style="height: 30px;width: 75px; padding: 0; margin-bottom: 10px;">
-                    <p style="font-size:small;">80 Bath</p>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-2">
-                <img class="imgmenu" src="/images/appitizer/3-Macaroni-Cheese.jpeg">
-                <div class="box" style="height: 40px;width: 200px; padding: 5px; margin-bottom: 10px;">
-                    Macaroni Cheese
-                    <input type="text" style="width: 50px;height: 25px;">
-                </div>
-                <div class="box" style="height: 30px;width: 75px; padding: 0; margin-bottom: 10px;">
-                    <p style="font-size:small;">69 Bath</p>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-2">
-                <img class="imgmenu" src="/images/appitizer/4-Cold-Cut.jpeg">
-                <div class="box" style="height: 40px;width: 200px; padding: 5px; margin-bottom: 10px;">
-                    Cold Cut Plate
-                    <input type="text" style="width: 50px;height: 25px;">
-                </div>
-                <div class="box" style="height: 30px;width: 75px; padding: 0; margin-bottom: 10px;">
-                    <p style="font-size:small;">230 Bath</p>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-2">
-                <img class="imgmenu" src="/images/appitizer/5-Mussel-with-Mornay-Sauce.jpeg">
-                <div class="box" style="height: 40px;width: 200px; padding: 5px; margin-bottom: 10px;">
-                    Mussel & Mornay
-                    <input type="text" style="width: 50px;height: 25px;">
-                </div>
-                <div class="box" style="height: 30px;width: 75px; padding: 0; margin-bottom: 10px;">
-                    <p style="font-size:small;">125 Bath</p>
-                </div>
-            </div>
-            <div class="col-lg-1"></div>
-        </div>
-        <div class="row">
-            <div class="col-lg-1"></div>
-            <div class="col-sm-6 col-lg-2">
-                <img class="imgmenu" src="/images/appitizer/6-Tortilla-Pinwheels.jpeg">
-                <div class="box" style="height: 40px;width: 200px; padding: 5px; margin-bottom: 10px;">
-                    Tortilla Pinwheels
-                    <input type="text" style="width: 50px;height: 25px;">
-                </div>
-                <div class="box" style="height: 30px;width: 75px; padding: 0; margin-bottom: 10px;">
-                    <p style="font-size:small;">100 Bath</p>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-2">
-                <img class="imgmenu" src="/images/appitizer/7-Creamy-Artichoke.jpeg">
-                <div class="box" style="height: 40px;width: 200px; padding: 5px; margin-bottom: 10px;">
-                    Creamy Artichoke
-                    <input type="text" style="width: 50px;height: 25px;">
-                </div>
-                <div class="box" style="height: 30px;width: 75px; padding: 0; margin-bottom: 10px;">
-                    <p style="font-size:small;">90 Bath</p>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-2">
-                <img class="imgmenu" src="/images/appitizer/8-Party-Shrimp.jpeg">
-                <div class="box" style="height: 40px;width: 200px; padding: 5px; margin-bottom: 10px;">
-                    Party Shrimp
-                    <input type="text" style="width: 50px;height: 25px;">
-                </div>
-                <div class="box" style="height: 30px;width: 75px; padding: 0; margin-bottom: 10px;">
-                    <p style="font-size:small;">110 Bath</p>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-2">
-                <img class="imgmenu" src="/images/appitizer/9-Swedish-Meatballs.jpeg">
-                <div class="box" style="height: 40px;width: 200px; padding: 5px; margin-bottom: 10px;">
-                    Swedish Meatballs
-                    <input type="text" style="width: 50px;height: 25px;">
-                </div>
-                <div class="box" style="height: 30px;width: 75px; padding: 0; margin-bottom: 10px;">
-                    <p style="font-size:small;">85 Bath</p>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-2">
-                <img class="imgmenu" src="/images/appitizer/10-Cheese-Fries.jpeg">
-                <div class="box" style="height: 40px;width: 200px; padding: 5px; margin-bottom: 10px;">
-                    Cheese Fries
-                    <input type="text" style="width: 50px;height: 25px;">
-                </div>
-                <div class="box" style="height: 30px;width: 75px; padding: 0; margin-bottom: 10px;">
-                    <p style="font-size:small;">65 Bath</p>
-                </div>
-            </div>
-            <div class="col-lg-1"></div>
         </div>
     </div>
     <%- include("partials/footer") -%>

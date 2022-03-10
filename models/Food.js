@@ -19,7 +19,7 @@ const food = [
     { 'id': 118, 'name': 'flap steak', 'price': 199 },
     { 'id': 119, 'name': 'flank steak', 'price': 175 },
     { 'id': 120, 'name': 'tri-tip', 'price': 230 },
-    { 'id': 121, 'name': 'abaked ricotta cake', 'price': 65 },
+    { 'id': 121, 'name': 'baked ricotta cake', 'price': 65 },
     { 'id': 122, 'name': 'lemon meringue pie', 'price': 80 },
     { 'id': 123, 'name': 'burnt butter', 'price': 49 },
     { 'id': 124, 'name': 'sticky ginger pudding', 'price': 59 },

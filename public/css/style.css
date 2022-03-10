@@ -63,6 +63,15 @@ img {
     box-shadow: 5px 5px gray;
 }
 
+.addbtn {
+    height: 50px;
+    width: 50px;
+    padding-top: 5px;
+    border: 2px solid gray;
+    border-radius: 30px;
+    box-shadow: 5px 5px gray;
+}
+
 footer {
     color: white;
     color: rgba(0, 0, 0, 0.5);

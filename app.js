@@ -17,17 +17,10 @@ app.get("/", function(req, res) {
     // console.log(currentTable);
     const table = Table.getTableById(currentTable);
     console.log(table[0].foods);
-    if (table[0].foods != null) {
-        res.render("home", {
-            table: currentTable,
-            foods: table[0].foods
-        });
-    } else {
-        res.render("home", {
-            table: currentTable,
-            foods: nullFood
-        });
-    }
+    res.render("home", {
+        table: currentTable,
+        foods: table[0].foods
+    });
 })
 
 app.get("/appetizer", function(req, res) {
@@ -55,7 +48,9 @@ app.get("/login", function(req, res) {
 })
 
 app.get("/kitchen", function(req, res) {
-    res.render("kitchen");
+    res.render("kitchen", {
+        tables: Table.getAllTable()
+    });
 })
 
 app.post("/", function(req, res) {

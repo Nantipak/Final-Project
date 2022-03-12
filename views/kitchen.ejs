@@ -7,4 +7,41 @@
             <h2>Order List</h2>
         </div>
     </div>
+    <div class="row">
+        <% tables.forEach(table => { %>
+            <% if (table.foods.length !== 0) { %>
+                <div class="box col-lg-6 col-sm-12" style="max-width: 700px; height: 350px;margin-top: 10px;">
+                    <p>Table
+                        <%= table.table_no %>
+                    </p>
+                    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                        <table class="table table-bordered table-striped mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Food</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">qty</th>
+                                    <th scope="col">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% table.foods.forEach(food => { %>
+                                    <tr>
+                                        <td>
+                                            <%= food.name  %>
+                                        </td>
+                                        <td>
+                                            <%= food.price %>
+                                        </td>
+                                        <td>NaN</td>
+                                        <td>NaN</td>
+                                    </tr>
+                                    <% }) %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <% } %>
+                    <% }) %>
+    </div>
     <%- include("partials/footer") -%>

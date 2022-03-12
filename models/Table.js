@@ -1,5 +1,5 @@
+const Food = require("./Food");
 const table = [
-    { 'table_no': 0, 'foods': [{ 'id': 100, 'name': null, 'price': null }] },
     { 'table_no': 1, 'foods': [] },
     { 'table_no': 2, 'foods': [] },
     { 'table_no': 3, 'foods': [] },
@@ -22,13 +22,16 @@ class Table {
         this.table_no = table_no;
         this.foods = foods;
     }
+    static getAllTable() {
+        return table;
+    }
     static getTableById(tableNO) {
         return table.filter(tb => tb.table_no == tableNO);
     }
-    addfood(tableNO, FoodID) {
-        const table = table.filter(tb => tb.table_no == tableNO);
-        const food = food.filter(f => food.FoodID == FoodID);
-        table.menu.push(food);
+    static addFoodToTable(FoodID, tableNO) {
+        const targetTable = table.filter(tb => tb.table_no == tableNO);
+        const food = Food.getFoodById(FoodID);
+        targetTable[0].foods.push(food[0]);
     }
 }
 module.exports = Table;

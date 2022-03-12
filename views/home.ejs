@@ -27,9 +27,9 @@
                 <p>Table number</p>
             </div>
             <div class="box" style="height: 400px;width: 400px;border-radius: 75px;">
-                <div class="box" style="margin: 20px auto;height: 60px;width: 100px; background-color: rgb(53, 180, 53);">
+                <p>your table</p>
+                <div class="box" style="height: 50px;width: 50px; background-color: rgb(53, 180, 53);">
                     <p>
-                        your table
                         <%= table %>
                     </p>
                 </div>
@@ -93,11 +93,32 @@
         <div class="col-4" style="border-left: 2px solid gray; text-align: center;padding-top: 20px;">
             <h4>Order Status</h4>
             <div class="box" style="height: 400px;width: 400px;border-radius: 75px;margin-top: 20px;">
-                <p>
-                    <%= foods.name %>
-                        <%= foods.price %>
-
-                </p>
+                <div class="table-wrapper-scroll-y scrollbar-home">
+                    <table class="table table-bordered table-striped mb-0">
+                        <thead>
+                            <tr>
+                                <th scope="col">Food</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">qty</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% foods.forEach(food => { %>
+                                <tr>
+                                    <td>
+                                        <%= food.name  %>
+                                    </td>
+                                    <td>
+                                        <%= food.price %>
+                                    </td>
+                                    <td>NaN</td>
+                                    <td>NaN</td>
+                                </tr>
+                                <% }) %>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

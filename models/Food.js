@@ -41,11 +41,8 @@ const food = [
     { 'id': 140, 'name': 'paloma', 'price': 65 }
 ]
 class Food {
-    static findFoodById(prodId) {
-        return products.filter(p => p.id == prodId);
-    }
-    update() {
-
+    static getFoodById(FoodID) {
+        return food.filter(f => f.id == FoodID);
     }
 }
 module.exports = Food;

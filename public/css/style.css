@@ -72,6 +72,17 @@ img {
     box-shadow: 5px 5px gray;
 }
 
+.my-custom-scrollbar {
+    max-height: 300px;
+    overflow: auto;
+}
+
+.scrollbar-home {
+    margin-top: 50px;
+    max-height: 300px;
+    overflow: auto;
+}
+
 footer {
     color: white;
     color: rgba(0, 0, 0, 0.5);

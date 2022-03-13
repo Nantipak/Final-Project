@@ -61,7 +61,7 @@ app.post("/", function(req, res) {
 app.post("/checkedout", function(req, res) {
     const table = Table.getTableById(currentTable);
     table[0].foods = [];
-    table[0].price = 0;
+    table[0].totalPrice = 0;
     res.redirect("/");
 })
 
@@ -85,7 +85,8 @@ app.post("/addFood", function(req, res) {
 app.post("/statusChange", function(req, res) {
     const foodID = req.body.id;
     const newStatus = req.body.status;
-    updateStatus(foodID, currentTable, newStatus);
+    const table_no = req.body.table_no;
+    updateStatus(foodID, table_no, newStatus);
     res.redirect("/kitchen");
 })
 

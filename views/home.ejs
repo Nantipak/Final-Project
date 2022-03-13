@@ -8,7 +8,7 @@
         </div>
     </div>
     <div class="row" style="margin:0;">
-        <div class="col-4" style="text-align: center;">
+        <div class="col-lg-4 col-sm-12" style="text-align: center;">
             <img src="/images/menu/appetizers.jpg">
             <a style="margin-bottom: 0;" href="/appetizer">Apptizer</a>
             <hr style="border-top: 2px solid gray;width: 100px;margin: 0 auto;">
@@ -22,7 +22,7 @@
             <a style="margin-bottom: 0;" href="/drinks">Drinks</a>
             <hr style="border-top: 2px solid gray;width: 100px;margin: 0 auto;">
         </div>
-        <div class="col-4">
+        <div class="col-lg-4 col-sm-12">
             <div class="box" style="margin: 30px auto;height: 40px;width: 200px;">
                 <p>Table number</p>
             </div>
@@ -90,9 +90,10 @@
                 </button>
             </form>
         </div>
-        <div class="col-4" style="border-left: 2px solid gray; text-align: center;padding-top: 20px;">
+
+        <div class="col-lg-4 col-sm-12" style="border-left: 2px solid gray; text-align: center;padding-top: 20px;">
             <h4>Order Status</h4>
-            <div class="box" style="height: 400px;width: 400px;border-radius: 75px;margin-top: 20px;">
+            <div class="box" style="height: 400px;width: 450px;border-radius: 75px;margin-top: 20px;">
                 <div class="table-wrapper-scroll-y scrollbar-home">
                     <table class="table table-bordered table-striped mb-0">
                         <thead>
@@ -101,26 +102,35 @@
                                 <th scope="col">Price</th>
                                 <th scope="col">qty</th>
                                 <th scope="col">Status</th>
+                                <th scope="col">Dlete</th>
                             </tr>
                         </thead>
                         <tbody>
                             <% foods.forEach(food => { %>
-                                <tr>
-                                    <td>
-                                        <%= food.name  %>
-                                    </td>
-                                    <td>
-                                        <%= food.price %>
-                                    </td>
-                                    <td>NaN</td>
-                                    <td>NaN</td>
-                                </tr>
+                                <form action="/deleteFood" method="post">
+                                    <tr>
+                                        <td>
+                                            <%= food.food.name  %>
+                                        </td>
+                                        <td>
+                                            <%= food.food.price %>
+                                        </td>
+                                        <td>
+                                            <%= food.qty %>
+                                        </td>
+                                        <td>
+                                            <%= food.status %>
+                                        </td>
+                                        <td><button class="box" style="height: 25px;width: 60px;color: red;" type="submit" name="deletebtn" value="<%= food.food.id %> ">delete</button></td>
+                                    </tr>
+                                </form>
                                 <% }) %>
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
+
     </div>
 
     <%- include( "partials/footer") -%>

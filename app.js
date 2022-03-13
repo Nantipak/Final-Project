@@ -9,14 +9,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 
 var currentTable = 1;
-var nullFood = [{ 'id': 100, 'name': null, 'price': null }];
-var tmpFood = [{ 'id': 101, 'name': 'smoke salmon', 'price': 120 }];
 var tmpURL;
 
 app.get("/", function(req, res) {
     // console.log(currentTable);
     const table = Table.getTableById(currentTable);
-    console.log(table[0].foods);
+    //console.log(table[0].foods);
     res.render("home", {
         table: currentTable,
         foods: table[0].foods
@@ -59,7 +57,7 @@ app.post("/", function(req, res) {
 })
 
 app.post("/checkedout", function(req, res) {
-    currentTable = 0;
+    currentTable = 1;
     res.redirect("/");
 })
 
@@ -67,11 +65,16 @@ app.post("/login", function(req, res) {
     res.redirect("/kitchen");
 })
 
+app.post("/deleteFood", function(req, res) {
+    const foodID = req.body.deletebtn;
+    // console.log(foodID);
+    Table.deleteFoodById(foodID, currentTable);
+    res.redirect("/");
+})
+
 app.post("/addFood", function(req, res) {
     const foodID = req.body.id;
-    //const table = Table.getTableById(currentTable);
     Table.addFoodToTable(foodID, currentTable);
-    //console.log(table[0].foods);
     res.redirect(tmpURL);
 })
 

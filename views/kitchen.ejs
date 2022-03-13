@@ -28,13 +28,17 @@
                                 <% table.foods.forEach(food => { %>
                                     <tr>
                                         <td>
-                                            <%= food.name  %>
+                                            <%= food.food.name  %>
                                         </td>
                                         <td>
-                                            <%= food.price %>
+                                            <%= food.food.price %>
                                         </td>
-                                        <td>NaN</td>
-                                        <td>NaN</td>
+                                        <td>
+                                            <%= food.qty %>
+                                        </td>
+                                        <td>
+                                            <%= food.status %>
+                                        </td>
                                     </tr>
                                     <% }) %>
                             </tbody>

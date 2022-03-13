@@ -28,10 +28,29 @@ class Table {
     static getTableById(tableNO) {
         return table.filter(tb => tb.table_no == tableNO);
     }
+
     static addFoodToTable(FoodID, tableNO) {
         const targetTable = table.filter(tb => tb.table_no == tableNO);
         const food = Food.getFoodById(FoodID);
-        targetTable[0].foods.push(food[0]);
+        var cnt = 0;
+        for (let i = 0; i < targetTable[0].foods.length; i++) {
+            if (targetTable[0].foods[i].food.id == FoodID) {
+                targetTable[0].foods[i].qty++;
+                cnt++;
+            }
+        }
+        if (cnt == 0) {
+            targetTable[0].foods.push({ "food": food[0], "qty": 1, "status": "ordered" });
+        }
+    }
+
+    static deleteFoodById(FoodID, tableNO) {
+        var targetTable = table.filter(tb => tb.table_no == tableNO);
+        for (let i = 0; i < targetTable[0].foods.length; i++) {
+            if (targetTable[0].foods[i].food.id == FoodID) {
+                targetTable[0].foods.splice(i, 1);
+            }
+        }
     }
 }
 module.exports = Table;

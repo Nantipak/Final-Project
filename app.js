@@ -78,6 +78,8 @@ app.post("/addFood", function(req, res) {
     res.redirect(tmpURL);
 })
 
-app.listen("3000", () => {
-    console.log("Server is running on Port 3000.");
+const hostname = '0.0.0.0';
+const port = 3000;
+app.listen(port, hostname, () => {
+    console.log(`Server running at http://${hostname}:${port}/`);
 });

@@ -3,6 +3,9 @@
         <button class="box" style="height: 60px;width: 60px;border-radius: 75px; margin-top:25px; padding: 0;float: left;" onClick="location.href='/'">
             <img src="/images/login/home.jpg" style="height: 25px;width: 25px;border-radius: 0;box-shadow: none;">
         </button>
+        <button class="box" style="height: 60px;width: 60px;border-radius: 75px; margin:25px 25px 0 25px; padding: 0;float: left;" onClick="location.href='/kitchen'">
+            <img src="/images/login/refresh.jpg" style="height: 25px;width: 25px;border-radius: 0;box-shadow: none;">
+        </button>
         <div class="box">
             <h2>Order List</h2>
         </div>
@@ -37,6 +40,18 @@
                                             <%= food.qty %>
                                         </td>
                                         <td>
+                                            <form action="/statusChange" method="post">
+                                                <input name="id" value="<%= food.food.id %>" type="hidden">
+                                                <button class="btn btn-secondary" type="submit text" name="status" value="ordered">
+                                                ordered
+                                                </button>
+                                                <button class="btn btn-primary" type="submit text" name="status" value="cooking">
+                                                cooking
+                                                </button>
+                                                <button class="btn btn-success" type="submit text" name="status" value="served">
+                                                served
+                                                </button>
+                                            </form>
                                             <%= food.status %>
                                         </td>
                                     </tr>

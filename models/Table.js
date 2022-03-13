@@ -31,7 +31,6 @@ class Table {
 
     static addFoodToTable(FoodID, tableNO) {
         const targetTable = table.filter(tb => tb.table_no == tableNO);
-        const food = Food.getFoodById(FoodID);
         var cnt = 0;
         for (let i = 0; i < targetTable[0].foods.length; i++) {
             if (targetTable[0].foods[i].food.id == FoodID) {
@@ -40,6 +39,7 @@ class Table {
             }
         }
         if (cnt == 0) {
+            const food = Food.getFoodById(FoodID);
             targetTable[0].foods.push({ "food": food[0], "qty": 1, "status": "ordered" });
         }
     }
@@ -49,6 +49,15 @@ class Table {
         for (let i = 0; i < targetTable[0].foods.length; i++) {
             if (targetTable[0].foods[i].food.id == FoodID) {
                 targetTable[0].foods.splice(i, 1);
+            }
+        }
+    }
+
+    static updateStatus(FoodID, tableNO, newStatus) {
+        const targetTable = table.filter(tb => tb.table_no == tableNO);
+        for (let i = 0; i < targetTable[0].foods.length; i++) {
+            if (targetTable[0].foods[i].food.id == FoodID) {
+                targetTable[0].foods[i].status = newStatus;
             }
         }
     }

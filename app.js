@@ -18,7 +18,8 @@ app.get("/", function(req, res) {
     //console.log(table[0].foods);
     res.render("home", {
         table: currentTable,
-        foods: table[0].foods
+        foods: table[0].foods,
+        totalPrice: table[0].totalPrice
     });
 })
 
@@ -58,7 +59,9 @@ app.post("/", function(req, res) {
 })
 
 app.post("/checkedout", function(req, res) {
-    currentTable = 1;
+    const table = Table.getTableById(currentTable);
+    table[0].foods = [];
+    table[0].price = 0;
     res.redirect("/");
 })
 

@@ -85,7 +85,7 @@
                 </form>
             </div>
             <form action="/checkedout" method="post">
-                <button class="box" style="margin: 30px auto;height: 40px;width: 200px; background-color: orange;" type="submit">
+                <button class="box" style="margin: 30px auto;height: 40px;width: 200px; background-color: orange;" type="submit" onclick="checkOut()">
                     <p>Checked out</p>
                 </button>
             </form>
@@ -132,8 +132,19 @@
                     </table>
                 </div>
             </div>
+            <div class="box" style="width: 400px;height: 40px;">
+                <h3>
+                    Total price:
+                    <%= totalPrice %>
+                        Bath
+                </h3>
+            </div>
         </div>
-
     </div>
+    <script>
+        function checkOut() {
+            alert('total of price = <%= totalPrice %> Bath');
+        }
+    </script>
 
     <%- include( "partials/footer") -%>

@@ -13,7 +13,7 @@
     <div class="row">
         <% tables.forEach(table => { %>
             <% if (table.foods.length !== 0) { %>
-                <div class="box col-lg-6 col-sm-12" style="max-width: 700px; height: 350px;margin-top: 10px;">
+                <div class="box col-lg-6 col-sm-12" style="max-width: 700px; height: 350px;margin-top: 50px;">
                     <p>Table
                         <%= table.table_no %>
                     </p>
@@ -52,14 +52,24 @@
                                                 served
                                                 </button>
                                             </form>
-                                            <%= food.status %>
+                                            <span style="font-weight: bolder;">
+                                                <%= food.status %>
+                                            </span>
                                         </td>
                                     </tr>
                                     <% }) %>
                             </tbody>
                         </table>
                     </div>
+                    <div class="box" style="width: 200px;height: 30px;">
+                        <h5>
+                            Total price:
+                            <%= table.totalPrice %>
+                                Bath
+                        </h5>
+                    </div>
                 </div>
+
                 <% } %>
                     <% }) %>
     </div>

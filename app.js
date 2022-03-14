@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const app = express();
 const Table = require("./models/Table");
 const Food = require("./models/Food");
+const { updateStatus } = require("./models/Table");
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -17,7 +18,8 @@ app.get("/", function(req, res) {
     //console.log(table[0].foods);
     res.render("home", {
         table: currentTable,
-        foods: table[0].foods
+        foods: table[0].foods,
+        totalPrice: table[0].totalPrice
     });
 })
 
@@ -57,7 +59,9 @@ app.post("/", function(req, res) {
 })
 
 app.post("/checkedout", function(req, res) {
-    currentTable = 1;
+    const table = Table.getTableById(currentTable);
+    table[0].foods = [];
+    table[0].totalPrice = 0;
     res.redirect("/");
 })
 
@@ -77,9 +81,15 @@ app.post("/addFood", function(req, res) {
     Table.addFoodToTable(foodID, currentTable);
     res.redirect(tmpURL);
 })
+app.post("/statusChange", function(req, res) {
+    const foodID = req.body.id;
+    const newStatus = req.body.status;
+    const table_no = req.body.table_no;
+    updateStatus(foodID, table_no, newStatus);
+    res.redirect("/kitchen");
+})
 
-const hostname = '0.0.0.0';
 const port = 8080;
 app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}/`);
-});
+    console.log(`Server running at port ${port}/`);
+})

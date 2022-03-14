@@ -3,6 +3,6 @@ services:
   app:
     container_name: final_project
     restart: always
-    image:  sodaop/finaldeploy:latest
+    image:  auto0032/final_project:latest
     ports:
       - "8082:8080"
